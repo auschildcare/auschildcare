@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "license": "auschildcare",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2",
+    "morgan": "^1.9.1",
+    "regenerator-runtime": "^0.13.3"
+  }
+}

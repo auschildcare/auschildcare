@@ -1,0 +1,58 @@
+{
+  "private": true,
+  "license": "auschildcare",
+  "scripts": {
+    "build": "UMI_ENV=prod umi build",
+    "start": "NODE_ENV=development npm run build && rm ./dist/index.html && concurrently \"umi dev\" \"nodemon server.js\"",
+    "test": "umi test",
+    "lint": "eslint --ext .js src mock tests",
+    "precommit": "lint-staged",
+    "debug": "RM_TMPDIR=none COMPRESS=none UMI_ENV=prod umi build && node server.js"
+  },
+  "dependencies": {
+    "antd": "^3.26.2",
+    "cheerio": "^1.0.0-rc.3",
+    "compression": "^1.7.4",
+    "dva": "^2.6.0-beta.19",
+    "enquire-js": "^0.2.1",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2",
+    "lodash": "^4.17.15",
+    "morgan": "^1.9.1",
+    "rc-banner-anim": "^2.4.2",
+    "rc-queue-anim": "^1.8.3",
+    "rc-scroll-anim": "^2.7.4",
+    "rc-tween-one": "^2.6.8",
+    "react": "^16.8.6",
+    "react-helmet-async": "^1.0.4",
+    "react-linkify": "^0.2.2",
+    "regenerator-runtime": "^0.13.3",
+    "umi-server": "^1.1.8"
+  },
+  "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "concurrently": "^5.0.0",
+    "eslint": "^5.4.0",
+    "eslint-config-umi": "^1.4.0",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.2",
+    "nodemon": "^1.19.3",
+    "prettier": "^1.18.2",
+    "react-test-renderer": "^16.7.0",
+    "umi": "^2.12.6",
+    "umi-plugin-react": "^1.14.9"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}
